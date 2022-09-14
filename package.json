@@ -10,7 +10,9 @@
     "pack": "ncc build lib/run.js -m",
     "prepack": "npm run build",
     "failing-test": "jest failing-tests",
-    "test": "jest /tests/"
+    "test": "jest /tests/",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -49,7 +51,8 @@
     "@actions/github": "^2.1.1",
     "lodash": "^4.17.15",
     "markdown-table": "^2.0.0",
-    "strip-ansi": "^6.0.0"
+    "strip-ansi": "^6.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@octokit/types": "^2.11.1",
@@ -67,5 +70,6 @@
     "prettier": "^2.0.4",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
-  }
+  },
+  "snyk": true
 }
